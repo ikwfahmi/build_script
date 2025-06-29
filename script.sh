@@ -19,7 +19,9 @@ echo "Sync success"
 echo "============="
 
 #nuke fsgen
-rm -rf build/soong/fsgen
+rm -rf build/soong
+
+git clone https://github.com/ikwfahmi/android_build_soong -b lineage-22.2 build/soong
 
 # Export
 export BUILD_USERNAME=kyura
