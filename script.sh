@@ -1,7 +1,7 @@
 rm -rf .repo/local_manifests/
 
 #repo init
-repo init -u https://github.com/AxionAOSP/android.git -b lineage-22.2 --git-lfs
+repo init -u https://github.com/alphadroid-project/manifest -b alpha-15.2 --git-lfs
 echo "=================="
 echo "Repo init success"
 echo "=================="
@@ -33,4 +33,4 @@ echo "======= Export Done ======"
 echo "====== Envsetup Done ======="
 
 #build
-axion X00TD va user && make installclean && ax -br
+lunch alpha_X00TD-userdebug && make bacon
