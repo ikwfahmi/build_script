@@ -19,6 +19,11 @@ echo "============="
 echo "Sync success"
 echo "============="
 
+#nuke fsgen
+rm -rf build/soong
+
+git clone https://github.com/ikwfahmi/build_soong -b lineage-22.2 build/soong
+
 # Export
 export BUILD_USERNAME=kyura
 export BUILD_HOSTNAME=crave
