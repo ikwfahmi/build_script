@@ -1,4 +1,5 @@
 rm -rf .repo/local_manifests/
+rm -rf prebuilts/clang/host/linux-x86
 
 #repo init
 repo init -u https://github.com/HorizonV2/android.git -b lineage-22.2 --git-lfs
