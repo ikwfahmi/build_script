@@ -34,4 +34,4 @@ echo "======= Export Done ======"
 echo "====== Envsetup Done ======="
 
 #build
-lunch X00TD-bp1a-userdebug && mka horizon
+lunch X00TD-bp1a-userdebug && make installclean && mka horizon
