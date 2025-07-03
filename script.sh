@@ -1,13 +1,13 @@
 rm -rf .repo/local_manifests/
 
 #repo init
-repo init -u https://github.com/alphadroid-project/manifest -b alpha-15.2 --git-lfs
+repo init -u https://github.com/HorizonV2/android.git -b lineage-22.2 --git-lfs
 echo "=================="
 echo "Repo init success"
 echo "=================="
 
 #local_manifest
-git clone https://github.com/ikwfahmi/local_manifests.git -b Alpha .repo/local_manifests
+git clone https://github.com/ikwfahmi/local_manifests.git -b horizon .repo/local_manifests
 echo "============================"
 echo "Local manifest clone success"
 echo "============================"
@@ -21,7 +21,7 @@ echo "============="
 #nuke fsgen
 rm -rf build/soong
 
-git clone https://github.com/ikwfahmi/build_soong -b alpha-15.2 build/soong
+git clone https://github.com/ikwfahmi/android_build_soong -b lineage-22.2 build/soong
 
 # Export
 export BUILD_USERNAME=kyura
@@ -33,4 +33,4 @@ echo "======= Export Done ======"
 echo "====== Envsetup Done ======="
 
 #build
-lunch alpha_X00TD-userdebug && make bacon
+lunch X00TD-bp1a-userdebug && mka horizon
