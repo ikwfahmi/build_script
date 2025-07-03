@@ -2,13 +2,13 @@ rm -rf .repo/local_manifests/
 rm -rf prebuilts/clang/host/linux-x86
 
 #repo init
-repo init -u https://github.com/AxionAOSP/android.git -b lineage-22.2 --git-lfs
+repo init -u https://github.com/The-Clover-Project/manifest.git -b 15-qpr2 --git-lfs
 echo "=================="
 echo "Repo init success"
 echo "=================="
 
 #local_manifest
-git clone https://github.com/ikwfahmi/local_manifests.git -b Axion .repo/local_manifests
+git clone https://github.com/ikwfahmi/local_manifests.git -b Clover .repo/local_manifests
 echo "============================"
 echo "Local manifest clone success"
 echo "============================"
@@ -19,10 +19,10 @@ echo "============="
 echo "Sync success"
 echo "============="
 
-#nuke fsgen
+#nuke soong
 rm -rf build/soong
 
-git clone https://github.com/ikwfahmi/android_build_soong -b lineage-22.2 build/soong
+git clone https://github.com/ikwfahmi/build_soong -b 15-qpr2 build/soong
 
 # Export
 export BUILD_USERNAME=kyura
@@ -34,4 +34,4 @@ echo "======= Export Done ======"
 echo "====== Envsetup Done ======="
 
 #build
-axion X00TD va user && make installclean && ax -br
+lunch clover_X00TD-bp1a-userdebug && make installclean && mka clover
