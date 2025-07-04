@@ -2,13 +2,13 @@ rm -rf .repo/local_manifests/
 rm -rf prebuilts/clang/host/linux-x86
 
 #repo init
-repo init -u https://github.com/HorizonV2/android.git -b lineage-22.2 --git-lfs
+repo init -u https://github.com/BlissRoms/stable_releases.git -b refs/tags/v18.6-stable-voyager --git-lfs
 echo "=================="
 echo "Repo init success"
 echo "=================="
 
 #local_manifest
-git clone https://github.com/ikwfahmi/local_manifests.git -b horizon .repo/local_manifests
+git clone https://github.com/ikwfahmi/local_manifests.git -b Bliss .repo/local_manifests
 echo "============================"
 echo "Local manifest clone success"
 echo "============================"
@@ -18,6 +18,11 @@ echo "============================"
 echo "============="
 echo "Sync success"
 echo "============="
+
+#nuke fsgen
+rm -rf build/soong
+
+git clone https://github.com/ikwfahmi/platform_build_soong -b voyager-qpr2 build/soong
 
 # Export
 export BUILD_USERNAME=kyura
@@ -29,4 +34,4 @@ echo "======= Export Done ======"
 echo "====== Envsetup Done ======="
 
 #build
-lunch lineage_X00TD-bp1a-userdebug && make installclean && mka horizon
+blissify -v X00TD
